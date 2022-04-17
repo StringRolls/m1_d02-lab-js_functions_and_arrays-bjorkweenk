@@ -1,19 +1,56 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+//declare a function ( maxOftwoNumbers)- Parameters (num1 and num2)
+// return with the Math.max function. 
+// console.log (maxOfTwoNumbers)
 
+function maxOfTwoNumbers(num1, num2) {
+  return Math.max(num1, num2)
+}
+console.log(maxOfTwoNumbers(10,20));
+
+//answer is 20 (num2 has the value of 20)
 
 
 // Iteration #2: Find longest word
+// declare a function (findLongestWord) add (parameter)=(arr)
+// use for loop to loop over the words starting from 0. Get arr length. and use i++ to stop the loop at the last word.
+// if arr.[i].length is equal to the longest word.length you have found the longest word.
+// return the longestword.
+
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(arr) {
+  let longestWord = '';
 
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > longestWord.length) {
+      longestWord = arr[i];
+    }
+  }
+  return longestWord;
+}
+console.log(findLongestWord(words));
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+// an array of numbers
+// declare  function sumNumbers ( parameter = numbers )
+// declare a new variable named sum = equal to 0.
+// use for loop. Starting from counting from 0. take the full numbers of length and use i++ to stop the loop at the end
+// sum += (plus equal)numbers(index)
+// return sum. 
+// you consol log sumNumbers(numbers);
 
-function sumNumbers() {}
+
+function sumNumbers(numbers) {
+  let sum = 0;
+for(let i = 0; i < numbers.length; i++){
+  sum += numbers[i];
+}
+return sum;
+}
+console.log(sumNumbers(numbers));
 
 
 
@@ -25,8 +62,22 @@ function sum() {}
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+// an arrray of numbers 
+/* declare an function averageNumbers (parameter numbersAvg)
+declare a new variable
+use for loop function with numbersAvg.length
+sum1 += ( plus equal) numbersAvg[i]
+return sum1 / (because you want to division,average) numbers.Avg.length
+console log the averageNumbers(numbersAvg)*/
 
-function averageNumbers() {}
+function averageNumbers(numbersAvg) {
+  let sum1 = 0;
+  for(let i = 0; i < numbersAvg.length; i++){
+    sum1 += numbersAvg[i];
+}
+return sum1  / numbersAvg.length;
+}
+console.log(averageNumbers(numbersAvg));
 
 
 // Level 2: Array of strings
