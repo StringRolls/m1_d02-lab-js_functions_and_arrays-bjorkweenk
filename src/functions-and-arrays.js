@@ -81,14 +81,42 @@ console.log(averageNumbers(numbersAvg));
 
 
 // Level 2: Array of strings
+// create a function with the variable name averageWordLenght(with a cappucino name stringArray(parameter))
+// if the string.array.lenght (is equal to zero) return NULL
+// create a new variable with an empty array so we can push the elements in that empty array
+// use the for each so it can loop over the words. Give it a cappu name (see element) 
+// call the function where you actually push the empty array
+// when you have everything in your empty array then divide the total stringArray.lenght and you will get the result 6
+
+
+
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(stringArray){
+  if(stringArray.length == 0){
+   return null;
+ } 
+ let LenghtAvg = [];
+
+ stringArray.forEach((element) =>{
+   stringLenghtAvg.push(element.length);
+ })
+
+ return sum(LenghtAvg) / stringArray.length;
+
+}
+  
+
 
 // Bonus - Iteration #4.1
 function avg() {}
 
 // Iteration #5: Unique arrays
+// create a function with uniquifyArray /variablename (cappu name arr)
+// create a new variable with a empty array which you push your new array
+// looop over ever word with the for function
+// if you done that check the newArr index if the words is already there than dont push it in the array.
+// return myNewArr and you get only the unique words. the dublicated are not pushed in. 
 const wordsUnique = [
   'crab',
   'poison',
@@ -103,18 +131,51 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arr) {
+  const myNewArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (myNewArr.indexOf(arr[i]) < 0) {
+      myNewArr.push(arr[i]);
+    }
+  }
+  return myNewArr;
+}
+console.log(uniquifyArray(wordsUnique));
+  
 
 
 
 // Iteration #6: Find elements
+// create a function doesWordExist (arr,word (cappu name))
+// if the arr.lenght is 0 return null
+// use a for loop to loop over the full arr.lenght
+// if in the arr the word includes the word than return true ir not return false
+// consolelog the function doeswordExist and then refer to the variablename from the string array. 
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(arr, word) {
+  if (arr.length === 0) {
+    return null;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.includes(word)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+console.log(doesWordExist(wordsFind));
 
 
 
 // Iteration #7: Count repetition
+// Create a fucntion with variablename howManyTime (parameter cappu name - arr and word)
+// create a new variable with variable name myNum = (is equal to 0) because you start counting from 0
+// use an for each function so it can loop over the words
+// if the word is equal to element then count +1 if not return 0
+// return myNum (because you will get the result from the counted wors that has been the same)
+// console log the function plus the wordsCount and which word you actually wanne log. 
 const wordsCount = [
   'machine',
   'matter',
@@ -129,11 +190,38 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arr, word) {
+  let myNum = 0;
+  arr.forEach(function (element, index) {
+    if (word === element) {
+      myNum = myNum + 1;
+    } else {
+      return null;
+    }
+  });
+  return myNum;
+}
+
+console.log(howManyTimes(wordsCount, 'machine'));
+console.log(howManyTimes(wordsCount, 'matter'));
+console.log(howManyTimes(wordsCount, 'subset'));
+console.log(howManyTimes(wordsCount, 'trouble'));
+console.log(howManyTimes(wordsCount, 'starting'));
+console.log(howManyTimes(wordsCount, 'eating'));
+console.log(howManyTimes(wordsCount, 'truth'));
+console.log(howManyTimes(wordsCount, 'disobedience'));
+
 
 
 
 // Iteration #8: Bonus
+// count the greatest prodcut of the four adjacent numbers
+// adjacent is any 4 numbers from horizontal and vertically
+// use the splice
+// get them in groups
+// then mulitply by four
+// then compare 
+// get result 
 const matrix = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
   [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
@@ -172,7 +260,7 @@ if (typeof module !== 'undefined') {
     sumNumbers,
     sum,
     averageNumbers,
-    averageWordLength,
+   averageWordLength,
     avg,
     uniquifyArray,
     doesWordExist,
